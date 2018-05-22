@@ -15,6 +15,7 @@ html, body, p , ul{
   }
   header{
       padding:$space*2 0 $space;
+      margin-left: 5%;
   }
   ul {
     list-style: none;
@@ -22,11 +23,42 @@ html, body, p , ul{
     li {
         margin: 0;
         display: inline;
+        &:nth-child(1) a{
+        &:hover{
+            background: blue;
+        }
+        }
+        &:nth-child(2) a{
+            &:hover{
+                background: rebeccapurple;
+            }
+            }
+        &:nth-child(3) a{
+                &:hover{
+                    background: yellow;
+                }
+                }
+        &:nth-child(4) a{
+                    &:hover{
+                        background: green;
+                    }
+                    }
+        &:nth-child(5) a{
+                        &:hover{
+                            background: red;
+                        }
+                        }
+        &:nth-child(6) a{
+                            &:hover{
+                                background: yellowgreen;
+                            }
+                            }
         a {
             text-decoration: none;
             color: $secondary-color;
             background: $primary-color;
             padding: $space/4 $space/2;
+            transition: all .5s linear;
         }
     }
 }
@@ -35,12 +67,41 @@ article {
     background: grayscale($primary-color);
     color: $secondary-color;
     padding: $space/2;
+&::first-letter{
+    font-size: 150%;
+}
+&:first-child{
+    background: white;
+}
+&:last-child{
+    background: white;
+}
+&:nth-child(4n+2){
+grid-column: span 3;
+color: #d3a91f;
+}
+&:nth-child(4n+3){
+grid-column: span 3;
+color: #d3a91f;
+}
+}
+
+blockquote{
+    &::before{
+        content: "'";
+    }
+    &::after{
+        content: "'";
+    }
+
 }
 main {
     width: $width*.9;
     margin: 0 auto;
-    background: lighten($secondary-color, 10%);
+    background: #d3a91f;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: $space/2;
   }
+  
+  
